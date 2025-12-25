@@ -1,0 +1,38 @@
+import React from 'react';
+import Image from "next/image";
+import logo from "@/assets/icons/logo.svg"
+import hero_icon from "@/assets/images/hero-icon.svg"
+import car from "@/assets/images/red-car.svg"
+import hero_asset from "@/assets/images/hero-asset.svg"
+
+const Hero = () => {
+    return (
+        <section
+            style={{
+                backgroundImage: `url(${hero_asset.src})`,
+            }}
+            className="text-neutral-50 flex flex-col gap-20 items-center justify-center w-screen bg-secondary"
+        >
+            <Image src={logo} alt={"logo"} className="mt-20" />
+
+            <div className="flex flex-col items-center gap-9">
+                <h1 className="max-w-[620px] text-[64px] leading-[120%] font-bold text-center">Be the first to ride with <span className="text-primary">Cplynk</span></h1>
+
+                <p className="max-w-[855px] text-xl font-normal text-center">
+                    We are on a mission to make ride-sharing feel more human,
+                    built on trust, flexibility, shared movement, and everyday life.
+                    Join a community choosing a better way to move.
+                </p>
+
+                <button className="text-text_color px-6 py-3.5 rounded-[14px] bg-primary text-base font-bold">Join Waitlist</button>
+            </div>
+
+            <div className="relative flex justify-center">
+                <Image src={hero_icon} alt={"hero"} />
+                <Image src={car} alt={"red car"} className="absolute bottom-0" />
+            </div>
+        </section>
+    );
+};
+
+export default Hero;
