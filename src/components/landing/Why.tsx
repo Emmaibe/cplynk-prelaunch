@@ -10,7 +10,6 @@ import Image from "next/image";
 const Why = () => {
     const [page, setPage] = React.useState<string>(navItems[0].value);
 
-
     return (
         <section className="py-16 px-2 bg-neutral-50 flex flex-col gap-24 items-center justify-center">
             <div className="flex flex-col items-center text-secondary gap-2">
@@ -117,9 +116,9 @@ const WhyChooseReasonsCard = ({ page }: {
             layoutId="why-choose"
             transition={{ ease: "circIn", duration: 0.4 }}
             className={`
-                        relative flex-none w-full sm:w-[456px] p-7 rounded-[40px] h-full
-                        ${page === "riders" ? "ml-auto" : "mr-auto"}
-                    `}
+                relative flex-none w-full sm:w-[456px] p-7 rounded-[40px] h-full
+                ${page === "riders" ? "ml-auto" : "mr-auto"}
+            `}
         >
             <div className="absolute inset-0 bg-white/10 backdrop-blur-md rounded-[40px]" />
 

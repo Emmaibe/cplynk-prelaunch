@@ -18,6 +18,7 @@ html {
     --primary: #FFC107;
     --text-color: #1C1F26;
     --text-neutral: #ffffff;
+    --text-gray: #B5BCC1;
 }
 
 @theme inline {
@@ -29,6 +30,8 @@ html {
 
     --color-text_color: var(--text-color);
     --color-neutral-50: var(--text-neutral);
+
+    --color-gray-50: var(--text-gray);
 
     --font-family-sans: var(--font-syne), sans-serif;
     --font-family-mono: var(--font-syne), monospace;
