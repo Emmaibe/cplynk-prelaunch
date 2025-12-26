@@ -12,9 +12,9 @@ const Why = () => {
     const [page, setPage] = React.useState<string>(navItems[0].value);
 
     return (
-        <section className="py-16 px-2 bg-neutral-50 flex flex-col gap-24 items-center justify-center">
+        <section className="py-16 px-2 bg-neutral-50 flex flex-col gap-24 items-center justify-center max-sm:gap-16">
             <div className="flex flex-col items-center text-secondary gap-2">
-                <div className="w-fit font-bold text-base flex items-center bg-secondary p-1.5 rounded-full">
+                <div className="w-fit font-bold text-base flex items-center bg-secondary p-1.5 rounded-full max-sm:text-sm">
                     {
                         navItems.map((item) => (
                             <div
@@ -43,14 +43,14 @@ const Why = () => {
                         ))
                     }
                 </div>
-                <h2 className="font-bold text-[40px] mt-6">
+                <h2 className="font-bold text-[40px] mt-6 text-center max-sm:text-[32px]">
                     {
                         page === "driver" ?
                             "Why Drive with Cplynk?" :
                             "Why Riders Choose Cplynk"
                     }
                 </h2>
-                <p className="text-2xl">
+                <p className="text-center text-2xl max-sm:text-base">
                     {
                         page === "driver" ?
                             "Turn your everyday commute into something more rewarding" :
@@ -61,7 +61,7 @@ const Why = () => {
 
             <div
                 style={{ backgroundImage: `url(${page === "driver" ? driver.src : riders.src})` }}
-                className="w-full max-w-[1152px] h-[679px] rounded-[50px] p-10 flex"
+                className="w-full max-w-[1152px] h-[679px] rounded-[50px] p-10 flex max-sm:p-4 max-sm:h-[568px]"
             >
                 {
                     page === "driver" ?
@@ -132,16 +132,16 @@ const WhyChooseReasonsCard = ({ page }: {
 
                 {
                     page && page === "driver" ? why.driver.map((item, index) => (
-                        <p key={index} className="font-semibold text-[20px] text-neutral-50">{item}</p>
+                        <p key={index} className="font-semibold text-[20px] text-neutral-50 max-sm:text-sm">{item}</p>
                     )) : why.riders.map((item, index) => (
-                        <p key={index} className="font-semibold text-[20px] text-neutral-50">{item}</p>
+                        <p key={index} className="font-semibold text-[20px] text-neutral-50 max-sm:text-sm">{item}</p>
                     ))
                 }
                 <motion.button
                     whileHover={{scale: 1.02}}
                     whileTap={{scale: 0.97}}
                     onClick={() => setIsWaitlistModalOpen(true)}
-                    className="w-fit text-text_color px-6 py-3.5 rounded-[14px] bg-primary text-base font-bold"
+                    className="w-fit text-text_color px-6 py-3.5 rounded-[14px] bg-primary text-base font-bold max-sm:text-sm"
                 >
                     Join Waitlist
                 </motion.button>
