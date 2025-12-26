@@ -13,7 +13,8 @@ const WaitlistContext = createContext<WaitlistContextTypes | undefined>(undefine
 
 const WaitlistContextProvider = ({ children }: { children: ReactNode }) => {
     const [isWaitlistModalOpen, setIsWaitlistModalOpen] = useState(false);
-    const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(true);
+    const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false
+    );
 
     return (
         <WaitlistContext.Provider value={{
