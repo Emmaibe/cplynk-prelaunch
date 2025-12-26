@@ -1,6 +1,8 @@
-import type { Metadata } from "next";
+import type {Metadata} from "next";
 import {Syne} from "next/font/google";
 import "./globals.css";
+import WaitlistContextProvider from "@/contexts/WaitlistContext";
+import {ReactNode} from "react";
 
 const syne = Syne({
     variable: "--font-syne",
@@ -14,18 +16,18 @@ export const metadata: Metadata = {
     description: "Cplynk Pre-Launch Landing Page",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
+export default function RootLayout({ children, }: Readonly<{
+    children: ReactNode;
 }>) {
-  return (
-    <html lang="en">
-      <body
-        className={`${syne.variable} antialiased`}
-      >
-        {children}
-      </body>
-    </html>
-  );
+    return (
+        <html lang="en">
+        <body
+            className={`${syne.variable} antialiased`}
+        >
+        <WaitlistContextProvider>
+            {children}
+        </WaitlistContextProvider>
+        </body>
+        </html>
+    );
 }

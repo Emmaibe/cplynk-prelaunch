@@ -6,6 +6,7 @@ import driver from "@/assets/images/driver.svg";
 import riders from "@/assets/images/riders.svg";
 import car from "@/assets/images/car.svg";
 import Image from "next/image";
+import {useWaitlist} from "@/contexts/WaitlistContext";
 
 const Why = () => {
     const [page, setPage] = React.useState<string>(navItems[0].value);
@@ -111,6 +112,8 @@ const why = {
 const WhyChooseReasonsCard = ({ page }: {
     page: string;
 }) => {
+    const { setIsWaitlistModalOpen } = useWaitlist();
+
     return (
         <motion.div
             layoutId="why-choose"
@@ -134,7 +137,14 @@ const WhyChooseReasonsCard = ({ page }: {
                         <p key={index} className="font-semibold text-[20px] text-neutral-50">{item}</p>
                     ))
                 }
-                <button className="w-fit text-text_color px-6 py-3.5 rounded-[14px] bg-primary text-base font-bold">Join Waitlist</button>
+                <motion.button
+                    whileHover={{scale: 1.02}}
+                    whileTap={{scale: 0.97}}
+                    onClick={() => setIsWaitlistModalOpen(true)}
+                    className="w-fit text-text_color px-6 py-3.5 rounded-[14px] bg-primary text-base font-bold"
+                >
+                    Join Waitlist
+                </motion.button>
             </div>
         </motion.div>
     )

@@ -4,8 +4,12 @@ import logo from "@/assets/icons/logo.svg"
 import hero_icon from "@/assets/images/hero-icon.svg"
 import car from "@/assets/images/red-car.svg"
 import hero_asset from "@/assets/images/hero-asset.svg"
+import { motion } from "framer-motion";
+import {useWaitlist} from "@/contexts/WaitlistContext";
 
 const Hero = () => {
+    const { setIsWaitlistModalOpen } = useWaitlist();
+
     return (
         <section
             style={{
@@ -24,7 +28,14 @@ const Hero = () => {
                     Join a community choosing a better way to move.
                 </p>
 
-                <button className="text-text_color px-6 py-3.5 rounded-[14px] bg-primary text-base font-bold">Join Waitlist</button>
+                <motion.button
+                    whileHover={{scale: 1.02}}
+                    whileTap={{scale: 0.97}}
+                    onClick={() => setIsWaitlistModalOpen(true)}
+                    className="cursor-pointer text-text_color px-6 py-3.5 rounded-[14px] bg-primary text-base font-bold"
+                >
+                    Join Waitlist
+                </motion.button>
             </div>
 
             <div className="relative flex justify-center">
