@@ -85,7 +85,7 @@ const WaitlistForm = () => {
 
     return (
         <div className="fixed w-full z-30 px-2">
-            <div className="relative px-3 py-14 max-w-[588px] h-[85vh] flex flex-col items-center bg-secondary rounded-[50px] max-sm:rounded-[30px]">
+            <div className="relative mx-auto px-3 py-14 max-w-[588px] h-[85vh] flex flex-col items-center bg-secondary rounded-[50px] max-sm:rounded-[30px]">
                 <X
                     onClick={() => setIsWaitlistModalOpen(false)}
                     className="cursor-pointer absolute right-7 top-7 text-neutral-50 size-[27px] max-sm:top-5 max-sm:right-5"
